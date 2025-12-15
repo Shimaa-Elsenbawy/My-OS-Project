@@ -27,3 +27,9 @@ jobs:
 
     - name: "Push Docker new image"  
       run: docker push ${{ secrets.USERNAME_SECRET }}/newimage:latest
+      
+    - name: "Build Docker image"  
+      run: docker build -t ${{ secrets.USERNAME_SECRET }}/myapp:latest .
+
+    - name: "Push Docker image"  
+      run: docker push ${{ secrets.USERNAME_SECRET }}/myapp:latest
